@@ -1,6 +1,8 @@
 package com.example.numad25sp_tianyima;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +21,11 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        Button b = findViewById(R.id.about_me_button);
+        b.setOnClickListener( v -> {
+            Toast.makeText(this,"Name: Tianyi Ma\nEmail: ma.tianyi@northeastern.edu", Toast.LENGTH_LONG ).show();
         });
     }
 }
