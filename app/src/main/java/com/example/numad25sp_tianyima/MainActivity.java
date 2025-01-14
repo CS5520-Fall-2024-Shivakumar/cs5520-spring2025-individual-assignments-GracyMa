@@ -5,6 +5,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -27,5 +28,20 @@ public class MainActivity extends AppCompatActivity {
         b.setOnClickListener( v -> {
             Toast.makeText(this,"Name: Tianyi Ma\nEmail: ma.tianyi@northeastern.edu", Toast.LENGTH_LONG ).show();
         });
+        showWelcomeDialog();
+    }
+
+    private void showWelcomeDialog() {
+        // create AlertDialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Welcome");
+        builder.setMessage("Welcome to my app!");
+        builder.setPositiveButton("OK", (dialog, which) -> {
+            dialog.dismiss(); // click OK to close alert
+        });
+
+        // show alert
+        AlertDialog welcomeDialog = builder.create();
+        welcomeDialog.show();
     }
 }
